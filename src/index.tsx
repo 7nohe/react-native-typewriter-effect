@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { Platform } from 'react-native';
 import { Text, Vibration, type TextStyle, type StyleProp } from 'react-native';
 
 const DEFAULT_MAX_DELAY = 100;
@@ -42,7 +43,7 @@ export default function TypeWriterEffect(props: TypeWriterEffectProps) {
     (ms: number) => {
       timeoutId.current = setTimeout(() => {
         setCurrentCharIndex(currentCharIndex + delta);
-        if (vibration) {
+        if (vibration && Platform.OS === 'android') {
           Vibration.vibrate(1);
         }
       }, ms);
