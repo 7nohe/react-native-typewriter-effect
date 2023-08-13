@@ -66,7 +66,7 @@ The style of the text.
 
 type: `boolean`
 
-Whether to vibrate when a character is typed.
+Android only. Whether to vibrate when a character is typed.
 
 ### backspaceEffect
 
