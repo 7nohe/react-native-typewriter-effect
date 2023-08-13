@@ -1,18 +1,39 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-typewriter-effect';
+import { Button, StyleSheet, TextInput, View } from 'react-native';
+import TypeWriterEffect from 'react-native-typewriter-effect';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
+  const [text, setText] = React.useState('');
+  const [content, setContent] = React.useState('Hello World!');
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <View style={styles.textField}>
+        <TextInput
+          value={text}
+          placeholder="Type something here..."
+          style={styles.textInput}
+          onChange={(e) => {
+            setText(e.nativeEvent.text);
+          }}
+        />
+        <Button
+          title="Start"
+          onPress={() => {
+            setContent(text);
+          }}
+        />
+      </View>
+      <TypeWriterEffect
+        style={styles.typeWriterEffect}
+        content={content}
+        onTyped={(char, index) => {
+          console.log(`Typed "${char}" at index ${index}`);
+        }}
+        onTypingEnd={() => {
+          console.log('Typing ended.');
+        }}
+      />
     </View>
   );
 }
@@ -23,9 +44,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  textField: {
+    flexDirection: 'row',
+    gap: 20,
+    width: '100%',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
+  textInput: {
+    width: 180,
+  },
+  typeWriterEffect: {
+    fontSize: 24,
+    padding: 20,
   },
 });
