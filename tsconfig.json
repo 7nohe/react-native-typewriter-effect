@@ -2,14 +2,18 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "react-native-typewriter-effect": ["./src/index"]
+      "react-native-typewriter-effect": [
+        "./src/index"
+      ]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "lib": ["esnext"],
+    "lib": [
+      "esnext"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,

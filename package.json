@@ -1,30 +1,12 @@
 {
   "name": "react-native-typewriter-effect",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Typing animation library for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
-  "react-native": "src/index",
-  "source": "src/index",
   "files": [
-    "src",
-    "lib",
-    "android",
-    "ios",
-    "cpp",
-    "*.podspec",
-    "!lib/typescript/example",
-    "!ios/build",
-    "!android/build",
-    "!android/gradle",
-    "!android/gradlew",
-    "!android/gradlew.bat",
-    "!android/local.properties",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__",
-    "!**/.*"
+    "lib"
   ],
   "scripts": {
     "test": "jest",
@@ -38,7 +20,12 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "chatgpt",
+    "typewriter",
+    "typing",
+    "animation",
+    "typewriter-effect"
   ],
   "repository": "https://github.com/7nohe/react-native-typewriter-effect",
   "author": "Daiki Urata (https://github.com/7nohe)",
