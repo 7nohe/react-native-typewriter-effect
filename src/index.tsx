@@ -5,13 +5,21 @@ const DEFAULT_MAX_DELAY = 100;
 const DEFAULT_MIN_DELAY = 10;
 
 export type TypeWriterEffectProps = {
+  // The text to be typed.
   content: string;
+  // The maximum delay between each character.
   maxDelay?: number;
+  // The minimum delay between each character.
   minDelay?: number;
+  // Callback function that is called when a character is typed.
   onTyped?: (char: string, currentCharIndex: number) => void;
+  // Callback function that is called when the typing ends.
   onTypingEnd?: () => void;
+  // The style of the text.
   style?: StyleProp<TextStyle>;
+  // Whether to vibrate when a character is typed.
   vibration?: boolean;
+  // Whether to use backspace effect.
   backspaceEffect?: boolean;
 };
 

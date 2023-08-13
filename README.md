@@ -1,6 +1,8 @@
 # react-native-typewriter-effect
 
-Typing animation library for React Native
+Typing animation library for React Native.
+
+![Demo](./demo.gif)
 
 ## Installation
 
@@ -10,13 +12,67 @@ npm install react-native-typewriter-effect
 
 ## Usage
 
-```js
-import { multiply } from 'react-native-typewriter-effect';
+```tsx
+import TypeWriterEffect from 'react-native-typewriter-effect';
 
-// ...
-
-const result = await multiply(3, 7);
+export default function App() {
+  return (
+    <View>
+      <TypeWriterEffect content="Hello World!" />
+    </View>
+  );
+}
 ```
+
+## Documentation
+
+### content
+
+type: `string`
+
+Required. The text to be typed.
+
+### maxDelay
+
+type: `number`
+
+The maximum delay between each character.
+
+### minDelay
+
+type: `number`
+
+The minimum delay between each character.
+
+### onTyped
+
+type: `(char: string, index: number) => void`
+
+Callback function that is called when a character is typed.
+
+### onTypingEnd
+
+type: `() => void`
+
+Callback function that is called when the typing ends.
+
+### style
+
+type: `StyleProp<TextStyle>`
+
+The style of the text.
+
+### vibration
+
+type: `boolean`
+
+Whether to vibrate when a character is typed.
+
+### backspaceEffect
+
+type: `boolean`
+
+Whether to use backspace effect.
 
 ## Contributing
 
